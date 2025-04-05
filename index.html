@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Biodata - Aditya Poddar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; /* Lighter background */
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- Header: Large Name --- */
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+        .header h1 {
+            font-size: 3.5em; /* Large font size for name */
+            color: #0056b3;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* --- Photo Carousel --- */
+        .photo-carousel {
+            width: 100%;
+            max-width: 500px; /* Centered with max width */
+            height: 350px; /* Fixed height */
+            margin: 0 auto 30px auto; /* Center */
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .photo-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0; /* Start hidden */
+            transition: opacity 1s ease-in-out; /* Fade effect */
+        }
+        .photo-carousel img.active {
+            opacity: 1; /* Active image visible */
+        }
+
+        /* --- Sections (Personal Details, etc.) --- */
+        .section {
+            margin-bottom: 25px;
+        }
+        .section h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            font-size: 1.8em;
+        }
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .section li {
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        .section strong {
+            display: inline-block;
+            min-width: 160px; /* Alignment */
+            color: #444;
+            font-weight: 600;
+        }
+        .section p {
+             font-size: 1.1em;
+             margin-bottom: 10px;
+        }
+
+        /* --- Privacy Note --- */
+         .privacy-note {
+            background-color: #fffde7;
+            border: 1px solid #ffecb3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 0.95em;
+         }
+         .privacy-note strong {
+            color: #c43e00;
+            min-width: auto;
+         }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .container {
+                margin: 15px;
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 2.5em;
+            }
+            .photo-carousel {
+                height: 250px;
+            }
+             .section h2 {
+                font-size: 1.5em;
+            }
+            .section li, .section p {
+                font-size: 1em;
+            }
+            .section strong {
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+            <h1>Aditya Poddar</h1> [cite: 1]
+        </header>
+
+        <section class="photo-carousel" id="photoCarousel">
+            <img src="photo1.jpg" alt="Photo 1" class="active"> <img src="photo2.jpg" alt="Photo 2">
+            <img src="photo3.jpg" alt="Photo 3">
+            </section>
+
+        <section class="section" id="personal-details">
+            <h2>Personal Details</h2>
+            <ul>
+                <li><strong>Date of Birth:</strong> 8th September 1998</li> [cite: 1]
+                <li><strong>Age:</strong> 26 Years</li> <li><strong>Height:</strong> 5' 7"</li> [cite: 1]
+                <li><strong>Weight:</strong> 71 kg</li> [cite: 1]
+                <li><strong>Gotra:</strong> Bansal</li> [cite: 1]
+                <li><strong>Blood Group:</strong> B+</li> [cite: 1]
+                <li><strong>Eating Habit:</strong> Vegetarian</li> [cite: 1]
+                <li><strong>Drinking/Smoking:</strong> Non-consumer, Non-smoker</li> [cite: 1]
+                <li><strong>Current Location:</strong> London, England, United Kingdom</li> [cite: 1]
+                <li><strong>Marital Status:</strong> Never Married</li> </ul>
+        </section>
+
+        <section class="section" id="education-profession">
+            <h2>Education & Profession</h2>
+            <ul>
+                <li><strong>Highest Qualification:</strong> B.E. in Computer Science</li> [cite: 1]
+                <li><strong>College/University:</strong> PES University, Electronic City</li> [cite: 1]
+                <li><strong>Occupation:</strong> Site Reliability Engineer</li> [cite: 1]
+                <li><strong>Company:</strong> Google, London</li> [cite: 1]
+            </ul>
+        </section>
+
+        <section class="section" id="family-details">
+            <h2>Family Details</h2>
+            <ul>
+                <li><strong>Father's Name:</strong> Raman Poddar</li> [cite: 1]
+                <li><strong>Father's Occupation:</strong> Dealing in heavy earthmover spare parts business</li> [cite: 1]
+                <li><strong>Mother's Name:</strong> Ruchi Poddar</li> [cite: 1]
+                <li><strong>Mother's Occupation:</strong> Fashion Designer</li> [cite: 1]
+                <li><strong>Family Origin:</strong> Bhiwani, Haryana</li> [cite: 1]
+                <li><strong>Family Residence:</strong> Surat</li> [cite: 6] </ul>
+        </section>
+
+        <section class="section" id="about-me">
+            <h2>About Me & Hobbies</h2>
+            <p>
+                I am a non-smoker and vegetarian based in London, working as a Site Reliability Engineer at Google[cite: 1]. In my free time, I enjoy listening to music, travelling, dancing, and going for long walks[cite: 1].
+                </p>
+        </section>
+
+        <section class="section" id="partner-expectations">
+            <h2>Partner Expectations (Optional)</h2>
+            <p>
+                Seeking a compatible, understanding, and well-educated partner to share life's journey.
+            </p>
+        </section>
+
+        <section class="section" id="contact-info">
+            <h2>Contact Information</h2>
+             <div class="privacy-note">
+               <strong>Important Privacy Note:</strong>
+               Your phone numbers from the PDF were **not** included here for privacy. Please replace the placeholder below with an email address you are comfortable sharing publicly on this website.
+            </div>
+            <ul>
+                <li><strong>Email:</strong> </li>
+                <li><strong>Preferred Contact Method:</strong> Email</li> </ul>
+        </section>
+
+        <footer>
+            <p>Biodata as of April 2025.</p>
+            <p>Hosted on GitHub Pages.</p>
+        </footer>
+
+    </div> <script>
+        // --- Simple JavaScript for Photo Carousel ---
+        const carousel = document.getElementById('photoCarousel');
+        const images = carousel.getElementsByTagName('img');
+        let currentImageIndex = 0;
+        const pauseDuration = 5000; // 5 seconds in milliseconds
+
+        function showNextImage() {
+            if (images.length === 0) return; // Do nothing if no images
+
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].classList.add('active');
+        }
+
+        if (images.length > 1) {
+            setInterval(showNextImage, pauseDuration);
+        } else if (images.length === 1) {
+            images[0].classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
