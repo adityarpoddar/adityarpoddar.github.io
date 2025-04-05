@@ -255,6 +255,7 @@
             height: 200px; /* Fixed height for images */
             object-fit: cover;
             display: block;
+            background-color: #374151; /* Add a fallback background */
         }
         .portfolio-item .portfolio-info {
             padding: 1rem 1.25rem;
@@ -462,6 +463,7 @@
             phone: "Your Phone (Optional)", // Replace or remove
             dob: "8 September 1998",
             hobbies: ["Music", "Travel", "Dance", "Long walks"],
+            // Corrected Image URLs (Markdown formatting removed)
             profileImageSidebar: "[https://placehold.co/100x100/4A5568/E2E8F0?text=AP](https://placehold.co/100x100/4A5568/E2E8F0?text=AP)", // Placeholder
             profileImageAbout: "[https://placehold.co/250x250/667EEA/E2E8F0?text=Your+Image](https://placehold.co/250x250/667EEA/E2E8F0?text=Your+Image)", // Placeholder
             aboutGreeting: "Hi, I'm Aditya Poddar",
@@ -478,8 +480,10 @@
             ],
 
             // Portfolio Items (replace with your actual projects)
+            // Corrected Image URLs (Markdown formatting removed)
+            // *** Updated first item's imageUrl to use local path ***
             portfolioItems: [
-                { title: "Project Title 1", description: "Brief description of the project.", imageUrl: "[https://placehold.co/600x400/374151/9CA3AF?text=Project+1](https://placehold.co/600x400/374151/9CA3AF?text=Project+1)", liveUrl: "#", githubUrl: "#" },
+                { title: "Project Title 1", description: "Brief description of the project.", imageUrl: "images/photo1.jpg", liveUrl: "#", githubUrl: "#" }, // Using local image
                 { title: "Project Title 2", description: "Brief description of the project.", imageUrl: "[https://placehold.co/600x400/374151/9CA3AF?text=Project+2](https://placehold.co/600x400/374151/9CA3AF?text=Project+2)", liveUrl: "#", githubUrl: null }, // Example with no GitHub link
                 { title: "Project Title 3", description: "Brief description of the project.", imageUrl: "[https://placehold.co/600x400/374151/9CA3AF?text=Project+3](https://placehold.co/600x400/374151/9CA3AF?text=Project+3)", liveUrl: null, githubUrl: "#" }, // Example with no live link
                 { title: "Project Title 4", description: "Brief description of the project.", imageUrl: "[https://placehold.co/600x400/374151/9CA3AF?text=Project+4](https://placehold.co/600x400/374151/9CA3AF?text=Project+4)", liveUrl: "#", githubUrl: "#" },
@@ -502,6 +506,7 @@
             document.getElementById('sidebar-profile-pic').src = portfolioData.profileImageSidebar;
             document.getElementById('sidebar-profile-pic').alt = portfolioData.name;
             const sidebarSocialLinksContainer = document.getElementById('sidebar-social-links');
+            sidebarSocialLinksContainer.innerHTML = ''; // Clear existing links first
             portfolioData.socials.forEach(social => {
                 sidebarSocialLinksContainer.innerHTML += `
                     <a href="${social.url}" aria-label="${social.name}" title="${social.name}" target="_blank" rel="noopener noreferrer">
@@ -513,6 +518,7 @@
             document.getElementById('hero-name').textContent = portfolioData.name;
             document.getElementById('hero-subtitle').textContent = portfolioData.title;
             const heroSocialLinksContainer = document.getElementById('hero-social-links');
+            heroSocialLinksContainer.innerHTML = ''; // Clear existing links first
              portfolioData.socials.forEach(social => {
                 heroSocialLinksContainer.innerHTML += `
                     <a href="${social.url}" aria-label="${social.name}" title="${social.name}" target="_blank" rel="noopener noreferrer">
@@ -539,6 +545,7 @@
 
             // Populate Portfolio Section
             const portfolioGrid = document.getElementById('portfolio-grid-container');
+            portfolioGrid.innerHTML = ''; // Clear existing items first
             portfolioData.portfolioItems.forEach(item => {
                 // Basic link generation for demo purposes
                 let linksHTML = '';
@@ -549,9 +556,12 @@
                     linksHTML += `<a href="${item.githubUrl}" target="_blank" rel="noopener noreferrer" class="text-teal-400 hover:text-teal-300 text-sm">GitHub</a>`;
                 }
 
+                // Add error handling for images
+                const imgTag = `<img src="${item.imageUrl}" alt="${item.title}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/374151/FF0000?text=Image+Error';">`;
+
                 portfolioGrid.innerHTML += `
                     <div class="portfolio-item">
-                        <img src="${item.imageUrl}" alt="${item.title}">
+                        ${imgTag}
                         <div class="portfolio-info">
                             <h4>${item.title}</h4>
                             <p>${item.description}</p>
@@ -563,6 +573,7 @@
             // Populate Contact Section
             document.getElementById('contact-intro').textContent = portfolioData.contactIntro;
             const contactDetailsList = document.getElementById('contact-details-list');
+             contactDetailsList.innerHTML = ''; // Clear existing items first
             contactDetailsList.innerHTML = `
                 <div class="contact-item">
                     <i data-lucide="map-pin"></i>
@@ -579,6 +590,7 @@
                  </div>` : ''}
             `;
             const contactSocialLinksContainer = document.getElementById('contact-social-links');
+            contactSocialLinksContainer.innerHTML = ''; // Clear existing links first
              portfolioData.socials.forEach(social => {
                 contactSocialLinksContainer.innerHTML += `
                     <a href="${social.url}" aria-label="${social.name}" title="${social.name}" target="_blank" rel="noopener noreferrer">
@@ -591,8 +603,7 @@
 
             // --- Initialize Libraries AFTER DOM is populated ---
 
-            // Initialize tsParticles (if not already handled by its own script loading)
-            // tsParticles configuration remains the same as before...
+            // Initialize tsParticles
             tsParticles.load("tsparticles", {
                 fpsLimit: 60, interactivity: { events: { onHover: { enable: true, mode: "repulse", }, onClick: { enable: true, mode: "push", }, resize: true, }, modes: { repulse: { distance: 100, duration: 0.4, }, push: { quantity: 4, }, grab: { distance: 150, line_linked: { opacity: 0.5 } }, bubble: { distance: 200, size: 40, duration: 2, opacity: 0.8 } }, }, particles: { color: { value: "#ffffff", }, links: { color: "#ffffff", distance: 150, enable: true, opacity: 0.2, width: 1, }, collisions: { enable: true, }, move: { direction: "none", enable: true, outModes: { default: "bounce", }, random: false, speed: 1, straight: false, }, number: { density: { enable: true, area: 800, }, value: 50, }, opacity: { value: 0.3, }, shape: { type: "circle", }, size: { value: { min: 1, max: 3 }, }, }, detectRetina: true, background: { color: '#111827', }
             });
