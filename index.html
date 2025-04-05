@@ -1,158 +1,458 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Poddar</title>
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <style type="text/tailwindcss">
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
+    <title>Aditya Poddar - SRE</title>
 
+    <script src="[https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js](https://www.google.com/search?q=https://cdn.jsdelivr.net/npm/tsparticles%402.9.3/tsparticles.bundle.min.js)"></script>
+
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap)" rel="stylesheet">
+
+    <script src="[https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.js](https://www.google.com/search?q=https://unpkg.com/lucide-static%40latest/font/Lucide.js)"></script>
+
+
+    <style>
+        /* Base styles */
+        html {
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
         body {
-            /* Astro blue background - adjust hex code as needed */
-            @apply bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-gray-200 font-sans;
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark background (Tailwind gray-900) */
+            color: #d1d5db; /* Default text color (Tailwind gray-300) */
+            display: flex;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 250px; /* Fixed width for sidebar */
+            background-color: #1f2937; /* Slightly lighter dark (Tailwind gray-800) */
+            padding: 2rem 1rem;
+            position: fixed; /* Fixed position */
+            top: 0;
+            left: 0;
+            height: 100vh; /* Full height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Pushes social links down */
+            transition: transform 0.3s ease-in-out;
+            z-index: 50;
+        }
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.375rem; /* rounded-md */
+            color: #9ca3af; /* gray-400 */
+            text-decoration: none;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            font-weight: 500; /* medium */
+        }
+        .sidebar nav a:hover, .sidebar nav a.active {
+            background-color: #374151; /* gray-700 */
+            color: #f3f4f6; /* gray-100 */
+        }
+        .sidebar .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem auto;
+            object-fit: cover;
+            border: 3px solid #4b5563; /* gray-600 */
+        }
+        .sidebar .social-links a {
+            color: #9ca3af; /* gray-400 */
+            margin: 0 0.5rem;
+            transition: color 0.2s ease;
+        }
+         .sidebar .social-links a:hover {
+             color: #f3f4f6; /* gray-100 */
+         }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: 250px; /* Offset by sidebar width */
+            width: calc(100% - 250px); /* Take remaining width */
+            position: relative; /* Needed for particle container positioning */
         }
         .content-section {
-            @apply min-h-screen p-8 flex flex-col justify-center items-center snap-start;
+            min-height: 100vh;
+            padding: 4rem 2rem; /* More padding */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #374151; /* gray-700 separator */
         }
-        .card {
-            @apply bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg max-w-2xl w-full;
+        .content-section:last-child {
+            border-bottom: none;
         }
-        .card h2 {
-            @apply text-3xl font-bold mb-4 text-teal-300;
+
+        /* Hero Section Specifics */
+        #home {
+            position: relative; /* For particle container */
+            overflow: hidden; /* Contain particles */
+            background-color: #111827; /* Ensure dark background behind particles */
         }
-        .card ul {
-            @apply list-disc list-inside space-y-2;
+        #tsparticles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Behind content */
         }
-        .photo-container {
-            @apply w-full max-w-xl h-72 md:h-96 bg-black/20 rounded-lg overflow-hidden relative shadow-xl mb-8;
+        #home .hero-content {
+            position: relative; /* Above particles */
+            z-index: 2;
+            text-align: center;
         }
-        .photo-container img {
-            @apply absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0;
+         #home h1 {
+            font-size: 3.75rem; /* text-6xl */
+            font-weight: 700; /* bold */
+            margin-bottom: 1rem; /* mb-4 */
+             background: linear-gradient(to right, #2dd4bf, #3b82f6); /* teal-400 to blue-500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+         }
+         #home p {
+             font-size: 1.25rem; /* text-xl */
+             color: #9ca3af; /* gray-400 */
+             max-width: 600px;
+             margin: 0 auto;
+         }
+
+        /* Card style for content sections */
+        .content-card {
+            background-color: rgba(31, 41, 55, 0.7); /* gray-800 with transparency */
+            backdrop-filter: blur(10px);
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            max-width: 800px; /* Limit width */
+            width: 100%;
+            border: 1px solid rgba(75, 85, 99, 0.5); /* gray-600 border */
         }
-        .photo-container img.active {
-            @apply opacity-100;
+        .content-card h2 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* bold */
+            margin-bottom: 1.5rem; /* mb-6 */
+            color: #5eead4; /* teal-300 */
+            text-align: center;
         }
-        html {
-            scroll-snap-type: y mandatory;
-            scroll-behavior: smooth;
+        .content-card ul {
+            list-style: none; /* Remove default list style */
+            padding-left: 0;
+            margin-top: 1rem;
+            space-y: 0.75rem; /* space-y-3 */
         }
-    </style>
-    <link rel="preconnect" href="[https://fonts.googleapis.com](https://www.google.com/search?q=https://fonts.googleapis.com)">
-    <link rel="preconnect" href="[https://fonts.gstatic.com](https://www.google.com/search?q=https://fonts.gstatic.com)" crossorigin>
-    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap](https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DInter:wght%40400%3B700%26display%3Dswap)" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
+         .content-card ul li {
+             padding-left: 1.5rem;
+             position: relative;
+         }
+        .content-card ul li::before {
+             content: '✓'; /* Checkmark or other icon */
+             position: absolute;
+             left: 0;
+             color: #5eead4; /* teal-300 */
+             font-weight: bold;
+         }
+         .content-card strong {
+             color: #a5f3fc; /* cyan-200 */
+         }
+
+        /* Responsive adjustments */
+        .menu-toggle {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 60;
+            background-color: #374151; /* gray-700 */
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.375rem; /* rounded-md */
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) { /* md breakpoint */
+            .sidebar {
+                transform: translateX(-100%); /* Hide sidebar off-screen */
+                z-index: 100; /* Ensure it's on top when open */
+                box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+            }
+            .sidebar.open {
+                transform: translateX(0); /* Show sidebar */
+            }
+            .main-content {
+                margin-left: 0; /* Full width */
+                width: 100%;
+            }
+            .menu-toggle {
+                display: block; /* Show hamburger menu */
+            }
+            .content-section {
+                 padding: 3rem 1rem; /* Adjust padding */
+            }
+             #home h1 {
+                 font-size: 2.25rem; /* text-4xl */
+             }
+             #home p {
+                 font-size: 1rem; /* text-base */
+             }
+            .content-card h2 {
+                 font-size: 1.875rem; /* text-3xl */
+            }
+        }
+
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-gray-900 text-gray-300">
 
-    <section class="content-section">
-        <div class="text-center">
-            <h1 class="text-6xl md:text-8xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-blue-400">
-                Aditya Poddar
-            </h1>
-            <p class="text-xl text-gray-400">Site Reliability Engineer | London</p>
-            <div class="mt-12 animate-bounce">
-                <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 mx-auto text-teal-300">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                </svg>
-            </div>
+    <aside class="sidebar" id="sidebar">
+        <div>
+            <img src="[https://placehold.co/100x100/4A5568/E2E8F0?text=AP](https://www.google.com/search?q=https://placehold.co/100x100/4A5568/E2E8F0%3Ftext%3DAP)" alt="Aditya Poddar" class="profile-pic">
+            <nav id="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#professional" class="nav-link">Professional</a>
+                <a href="#family" class="nav-link">Family</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
         </div>
-    </section>
-
-    <section class="content-section">
-        <div class="card">
-            <h2 class="text-center">Gallery</h2>
-            <div id="photo-rotator" class="photo-container mx-auto">
-                <img src="images/photo1.jpg" alt="Placeholder Photo 1" class="active">
-                <img src="images/photo1.jpg" alt="Placeholder Photo 2">
-                <img src="[https://placehold.co/800x600/6D5D6E/E0D9F6?text=Your+Photo+3](https://www.google.com/search?q=https://placehold.co/800x600/6D5D6E/E0D9F6%3Ftext%3DYour%2BPhoto%2B3)" alt="Placeholder Photo 3">
-                <img src="[https://placehold.co/800x600/9F73AB/E0D9F6?text=Your+Photo+4](https://www.google.com/search?q=https://placehold.co/800x600/9F73AB/E0D9F6%3Ftext%3DYour%2BPhoto%2B4)" alt="Placeholder Photo 4">
-                 </div>
-            <p class="text-center text-sm text-gray-400">A few moments...</p>
+        <div class="social-links text-center pb-4">
+            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin" class="inline-block w-5 h-5"></i></a>
+            <a href="#" aria-label="GitHub" title="GitHub"><i data-lucide="github" class="inline-block w-5 h-5"></i></a>
+            <a href="#" aria-label="Twitter" title="Twitter"><i data-lucide="twitter" class="inline-block w-5 h-5"></i></a>
         </div>
-    </section>
+    </aside>
 
-    <section class="content-section">
-        <div class="card">
-            <h2>Personal Snapshot</h2>
-            <ul>
-                <li><strong>Full Name:</strong> Aditya Poddar</li>
-                <li><strong>Born:</strong> 8th September 1998, 5:35 AM, Surat</li>
-                <li><strong>Gotra:</strong> Bansal</li>
-                <li><strong>Height & Weight:</strong> 5' 7" & 71 kg</li>
-                <li><strong>Blood Group:</strong> B+</li>
-                <li><strong>Lifestyle:</strong> Non-consumer, Non-smoker, Vegetarian</li>
-                <li><strong>Hobbies:</strong> Listening to music, Travelling, Dance, Long walks</li>
-            </ul>
-        </div>
-    </section>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
 
-    <section class="content-section">
-        <div class="card">
-            <h2>Professional Life</h2>
-            <ul>
-                <li><strong>Education:</strong> B.E. in Computer Science from PES University, Electronic City</li>
-                <li><strong>Current Role:</strong> Site Reliability Engineer, Google, London</li>
-                <li><strong>Location:</strong> London, England, United Kingdom (Since ~2022)</li>
-                <li><strong>Previous Location:</strong> Bangalore, India (~2020 - ~2022)</li>
-            </ul>
-        </div>
-    </section>
+    <main class="main-content">
 
-    <section class="content-section">
-        <div class="card">
-            <h2>Family Background</h2>
-            <ul>
-                <li><strong>Father:</strong> Raman Poddar (Dealing in heavy earthmover spare parts business)</li>
-                <li><strong>Mother:</strong> Ruchi Poddar (Fashion Designer)</li>
-                <li><strong>Family Origin:</strong> Bhiwani, Haryana</li>
-                <li><strong>Paternal Uncles:</strong> Suresh Poddar (Marble/Granite/Tile, Aurangabad), Naresh Poddar (Spare parts, Surat)</li>
-                <li><strong>Paternal Aunts:</strong> 3 (all well-settled)</li>
-                <li><strong>Maternal Uncle:</strong> Rupam Gupta (Well-settled, Amritsar)</li>
-            </ul>
-        </div>
-    </section>
+        <section id="home" class="content-section">
+            <div id="tsparticles"></div>
+            <div class="hero-content">
+                <h1>Aditya Poddar</h1>
+                <p>Site Reliability Engineer at Google, London. Passionate about building scalable and reliable systems.</p>
+                </div>
+        </section>
 
-    <section class="content-section">
-        <div class="card">
-            <h2>Contact / Location</h2>
-             <ul>
-                <li><strong>Current Base:</strong> London, UK</li>
-                <li><strong>Family Home:</strong> Surat, India</li>
+        <section id="about" class="content-section">
+            <div class="content-card">
+                <h2>About Me</h2>
+                <ul>
+                    <li><strong>Born:</strong> 8th September 1998, Surat</li>
+                    <li><strong>Gotra:</strong> Bansal</li>
+                    <li><strong>Height & Weight:</strong> 5' 7" & 71 kg</li>
+                    <li><strong>Blood Group:</strong> B+</li>
+                    <li><strong>Lifestyle:</strong> Non-consumer, Non-smoker, Vegetarian</li>
+                    <li><strong>Hobbies:</strong> Listening to music, Travelling, Dance, Long walks</li>
                 </ul>
-            <p class="mt-4 text-sm text-gray-400">Please reach out for specific contact details if needed.</p>
-        </div>
-    </section>
+                <p class="mt-4 text-gray-400 text-center">
+                    A technology enthusiast with a love for exploring new places and enjoying music.
+                </p>
+            </div>
+        </section>
+
+        <section id="professional" class="content-section">
+            <div class="content-card">
+                <h2>Professional Life</h2>
+                <ul>
+                    <li><strong>Current Role:</strong> Site Reliability Engineer, Google (London, UK)</li>
+                    <li><strong>Experience:</strong> ~3 years in London, ~2 years in Bangalore</li>
+                    <li><strong>Education:</strong> B.E. in Computer Science, PES University, Electronic City</li>
+                    <li><strong>Skills:</strong> [Add key skills here, e.g., Cloud Platforms, Automation, Monitoring, etc.]</li>
+                </ul>
+                 </div>
+        </section>
+
+        <section id="family" class="content-section">
+             <div class="content-card">
+                <h2>Family Background</h2>
+                <ul>
+                    <li><strong>Father:</strong> Raman Poddar (Heavy earthmover spare parts business)</li>
+                    <li><strong>Mother:</strong> Ruchi Poddar (Fashion Designer)</li>
+                    <li><strong>Family Origin:</strong> Bhiwani, Haryana</li>
+                    <li><strong>Extended Family:</strong> Well-settled uncles and aunts in Surat, Aurangabad, and Amritsar.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="content-card">
+                <h2>Get In Touch</h2>
+                 <p class="text-center text-gray-400 mb-6">Feel free to reach out via LinkedIn or other platforms.</p>
+                <ul>
+                    <li><strong>Current Base:</strong> London, UK</li>
+                    <li><strong>Family Home:</strong> Surat, India</li>
+                    <li><strong>Contact Preference:</strong> Please use social links above or professional channels.</li>
+                     </ul>
+                 <div class="social-links text-center mt-6">
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin" class="inline-block w-6 h-6 mx-2 text-gray-400 hover:text-white"></i></a>
+                    <a href="#" aria-label="GitHub" title="GitHub"><i data-lucide="github" class="inline-block w-6 h-6 mx-2 text-gray-400 hover:text-white"></i></a>
+                    <a href="#" aria-label="Twitter" title="Twitter"><i data-lucide="twitter" class="inline-block w-6 h-6 mx-2 text-gray-400 hover:text-white"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <script>
-        // Simple Image Rotator
-        const photoContainer = document.getElementById('photo-rotator');
-        const images = photoContainer.querySelectorAll('img');
-        let currentImageIndex = 0;
-        const pauseDuration = 3000; // 3 seconds
+        // tsParticles Initialization
+        tsParticles.load("tsparticles", {
+            fpsLimit: 60,
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: true,
+                        mode: "repulse", // Or "grab", "bubble"
+                    },
+                    onClick: {
+                        enable: true,
+                        mode: "push", // Or "remove", "bubble"
+                    },
+                    resize: true,
+                },
+                modes: {
+                    repulse: {
+                        distance: 100, // Increase distance for more noticeable effect
+                        duration: 0.4,
+                    },
+                    push: {
+                        quantity: 4,
+                    },
+                     grab: { // Example grab mode config
+                         distance: 150,
+                         line_linked: {
+                             opacity: 0.5
+                         }
+                     },
+                     bubble: { // Example bubble mode config
+                         distance: 200,
+                         size: 40,
+                         duration: 2,
+                         opacity: 0.8
+                     }
+                },
+            },
+            particles: {
+                color: {
+                    value: "#ffffff", // Particle color
+                },
+                links: {
+                    color: "#ffffff", // Link color
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.2, // Make links less prominent
+                    width: 1,
+                },
+                collisions: {
+                    enable: true,
+                },
+                move: {
+                    direction: "none",
+                    enable: true,
+                    outModes: {
+                        default: "bounce", // Keep particles bouncing within the container
+                    },
+                    random: false,
+                    speed: 1, // Slower speed
+                    straight: false,
+                },
+                number: {
+                    density: {
+                        enable: true,
+                        area: 800, // Adjust density
+                    },
+                    value: 50, // Fewer particles
+                },
+                opacity: {
+                    value: 0.3, // Make particles less prominent
+                },
+                shape: {
+                    type: "circle",
+                },
+                size: {
+                    value: { min: 1, max: 3 }, // Smaller particles
+                },
+            },
+            detectRetina: true,
+             background: { // Ensure particle background matches body
+                 color: '#111827', // Match body background
+             }
+        });
 
-        function rotateImages() {
-            // Remove active class from current image
-            images[currentImageIndex].classList.remove('active');
+        // Sidebar Toggle for Mobile
+        const sidebar = document.getElementById('sidebar');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainContent = document.querySelector('.main-content'); // To potentially overlay
 
-            // Move to the next image index, looping back to 0 if necessary
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-
-            // Add active class to the new current image
-            images[currentImageIndex].classList.add('active');
+        if (menuToggle && sidebar) {
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+                // Optional: Add an overlay to the main content when menu is open
+                // You might need an extra div for the overlay
+            });
         }
 
-        // Start the rotation interval
-        setInterval(rotateImages, pauseDuration);
+         // Close sidebar when clicking outside on mobile (optional)
+         document.addEventListener('click', function(event) {
+             const isClickInsideSidebar = sidebar.contains(event.target);
+             const isClickOnToggle = menuToggle.contains(event.target);
 
-        // Ensure the first image is visible initially
-        if (images.length > 0) {
-            images[0].classList.add('active');
-        }
+             if (!isClickInsideSidebar && !isClickOnToggle && sidebar.classList.contains('open')) {
+                 sidebar.classList.remove('open');
+             }
+         });
+
+        // Active Navigation Link Highlighting on Scroll
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('.sidebar nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Adjust offset based on your layout needs (e.g., header height)
+                const sectionHeight = section.clientHeight;
+                 // Check if scroll position is within the section bounds (add some buffer)
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                // Check if the link's href matches the current section ID
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+             // Ensure 'Home' is active when scrolled to the very top
+             if (window.pageYOffset < sections[0].offsetTop) {
+                 navLinks.forEach(link => link.classList.remove('active'));
+                 const homeLink = document.querySelector('.sidebar nav a[href="#home"]');
+                 if(homeLink) homeLink.classList.add('active');
+             }
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
     </script>
 
 </body>
