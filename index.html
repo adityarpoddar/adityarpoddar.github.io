@@ -5,26 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Poddar - SRE</title>
 
-    <script src="[https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js](https://www.google.com/search?q=https://cdn.jsdelivr.net/npm/tsparticles%402.9.3/tsparticles.bundle.min.js)"></script>
-
+    <script src="[https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js](https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js)"></script>
     <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-
     <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
     <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap)" rel="stylesheet">
-
-    <script src="[https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.js](https://www.google.com/search?q=https://unpkg.com/lucide-static%40latest/font/Lucide.js)"></script>
-
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap](https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DInter:wght%40400%3B500%3B600%3B700%26display%3Dswap)" rel="stylesheet">
+    <script src="[https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.js](https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.js)"></script>
 
     <style>
         /* Base styles */
         html {
-            scroll-behavior: smooth; /* Enable smooth scrolling */
+            scroll-behavior: smooth;
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827; /* Dark background (Tailwind gray-900) */
-            color: #d1d5db; /* Default text color (Tailwind gray-300) */
+            background-color: #111827; /* gray-900 */
+            color: #d1d5db; /* gray-300 */
             display: flex;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
@@ -33,16 +29,16 @@
 
         /* Sidebar Navigation */
         .sidebar {
-            width: 250px; /* Fixed width for sidebar */
-            background-color: #1f2937; /* Slightly lighter dark (Tailwind gray-800) */
+            width: 250px;
+            background-color: #1f2937; /* gray-800 */
             padding: 2rem 1rem;
-            position: fixed; /* Fixed position */
+            position: fixed;
             top: 0;
             left: 0;
-            height: 100vh; /* Full height */
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Pushes social links down */
+            justify-content: space-between;
             transition: transform 0.3s ease-in-out;
             z-index: 50;
         }
@@ -74,33 +70,57 @@
             transition: color 0.2s ease;
         }
          .sidebar .social-links a:hover {
-             color: #f3f4f6; /* gray-100 */
+             color: #5eead4; /* teal-300 */
          }
 
         /* Main Content Area */
         .main-content {
-            margin-left: 250px; /* Offset by sidebar width */
-            width: calc(100% - 250px); /* Take remaining width */
-            position: relative; /* Needed for particle container positioning */
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            position: relative;
         }
         .content-section {
             min-height: 100vh;
-            padding: 4rem 2rem; /* More padding */
+            padding: 5rem 2rem; /* Increased padding */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-bottom: 1px solid #374151; /* gray-700 separator */
+            border-bottom: 1px solid #374151; /* gray-700 */
         }
         .content-section:last-child {
             border-bottom: none;
         }
+        .section-title { /* Consistent title style */
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* bold */
+            margin-bottom: 3rem; /* mb-12 */
+            color: #5eead4; /* teal-300 */
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem; /* space for underline */
+        }
+        .section-title::after { /* Underline effect for titles */
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #5eead4; /* teal-300 */
+        }
+        .section-container { /* Centering container within sections */
+             width: 100%;
+             max-width: 1100px; /* Consistent max width */
+             margin: 0 auto;
+        }
 
         /* Hero Section Specifics */
         #home {
-            position: relative; /* For particle container */
-            overflow: hidden; /* Contain particles */
-            background-color: #111827; /* Ensure dark background behind particles */
+            position: relative;
+            overflow: hidden;
+            background-color: #111827;
         }
         #tsparticles {
             position: absolute;
@@ -108,111 +128,247 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; /* Behind content */
+            z-index: 1;
         }
         #home .hero-content {
-            position: relative; /* Above particles */
+            position: relative;
             z-index: 2;
             text-align: center;
         }
          #home h1 {
             font-size: 3.75rem; /* text-6xl */
-            font-weight: 700; /* bold */
-            margin-bottom: 1rem; /* mb-4 */
-             background: linear-gradient(to right, #2dd4bf, #3b82f6); /* teal-400 to blue-500 */
+            font-weight: 700;
+            margin-bottom: 1rem;
+             background: linear-gradient(to right, #2dd4bf, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
          }
-         #home p {
-             font-size: 1.25rem; /* text-xl */
+         #home .subtitle { /* Added class for subtitle */
+             font-size: 1.5rem; /* text-2xl */
              color: #9ca3af; /* gray-400 */
-             max-width: 600px;
-             margin: 0 auto;
+             margin-bottom: 2rem; /* mb-8 */
+         }
+         #home .hero-social-links a { /* Social links in hero */
+            color: #9ca3af; /* gray-400 */
+            margin: 0 0.75rem; /* mx-3 */
+            transition: color 0.2s ease;
+            display: inline-block;
+         }
+         #home .hero-social-links a:hover {
+             color: #5eead4; /* teal-300 */
          }
 
-        /* Card style for content sections */
-        .content-card {
-            background-color: rgba(31, 41, 55, 0.7); /* gray-800 with transparency */
-            backdrop-filter: blur(10px);
-            border-radius: 0.75rem; /* rounded-xl */
-            padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-            max-width: 800px; /* Limit width */
-            width: 100%;
-            border: 1px solid rgba(75, 85, 99, 0.5); /* gray-600 border */
+        /* About Section Styles */
+        #about .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem; /* space between items */
         }
-        .content-card h2 {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 700; /* bold */
-            margin-bottom: 1.5rem; /* mb-6 */
+         @media (min-width: 768px) { /* md breakpoint */
+             #about .about-container {
+                 flex-direction: row;
+                 align-items: flex-start;
+             }
+         }
+        #about .about-image {
+            flex-shrink: 0;
+            width: 250px; /* Adjust size as needed */
+            height: 250px;
+            border-radius: 0.75rem; /* rounded-xl */
+            object-fit: cover;
+            border: 3px solid #4b5563; /* gray-600 */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        #about .about-content h3 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 600; /* semibold */
+            color: #f9fafb; /* gray-50 */
+            margin-bottom: 0.5rem;
+        }
+        #about .about-content .role-subtitle {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 500; /* medium */
             color: #5eead4; /* teal-300 */
+            margin-bottom: 1.5rem;
+        }
+        #about .about-content p {
+            color: #d1d5db; /* gray-300 */
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        #about .about-details ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 0.75rem 1.5rem; /* row and column gap */
+        }
+        #about .about-details li {
+            color: #d1d5db; /* gray-300 */
+        }
+        #about .about-details strong {
+            color: #f9fafb; /* gray-50 */
+            margin-right: 0.5rem;
+            font-weight: 600; /* semibold */
+        }
+        .cta-button { /* Reusable button style */
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #5eead4; /* teal-300 */
+            color: #111827; /* gray-900 */
+            font-weight: 600; /* semibold */
+            border-radius: 0.375rem; /* rounded-md */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            text-decoration: none;
             text-align: center;
         }
-        .content-card ul {
-            list-style: none; /* Remove default list style */
-            padding-left: 0;
-            margin-top: 1rem;
-            space-y: 0.75rem; /* space-y-3 */
+        .cta-button:hover {
+            background-color: #2dd4bf; /* teal-400 */
+            transform: translateY(-1px);
         }
-         .content-card ul li {
-             padding-left: 1.5rem;
-             position: relative;
+
+        /* Portfolio Section Styles */
+        #portfolio .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 2rem;
+        }
+        .portfolio-item {
+            background-color: #1f2937; /* gray-800 */
+            border-radius: 0.5rem; /* rounded-lg */
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 200px; /* Fixed height for images */
+            object-fit: cover;
+            display: block;
+        }
+        .portfolio-item .portfolio-info {
+            padding: 1rem 1.25rem;
+        }
+        .portfolio-item h4 {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* semibold */
+            color: #f3f4f6; /* gray-100 */
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-item p {
+            font-size: 0.875rem; /* text-sm */
+            color: #9ca3af; /* gray-400 */
+        }
+        /* Add links/buttons within portfolio-info if needed */
+
+
+        /* Contact Section Specific Styles (incorporating previous attempt) */
+        #contact .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: #d1d5db;
+        }
+        #contact .contact-item i {
+            color: #5eead4;
+            width: 1.5rem; height: 1.5rem; margin-right: 1rem; flex-shrink: 0;
+        }
+         #contact .contact-item div h4 {
+             font-weight: 600; color: #f9fafb; margin-bottom: 0.25rem;
          }
-        .content-card ul li::before {
-             content: '✓'; /* Checkmark or other icon */
-             position: absolute;
-             left: 0;
-             color: #5eead4; /* teal-300 */
-             font-weight: bold;
+         #contact .contact-item div p {
+             color: #d1d5db; font-size: 0.9rem;
          }
-         .content-card strong {
-             color: #a5f3fc; /* cyan-200 */
+        #contact .contact-social-links a {
+            color: #9ca3af; margin-right: 1rem; transition: color 0.2s ease; display: inline-block;
+        }
+        #contact .contact-social-links a:hover {
+            color: #5eead4;
+        }
+        #contact form input,
+        #contact form textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: #374151; /* gray-700 */
+            border: 1px solid #4b5563; /* gray-600 */
+            border-radius: 0.375rem;
+            color: #f3f4f6; /* gray-100 */
+            margin-bottom: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        #contact form input::placeholder,
+        #contact form textarea::placeholder { /* Style placeholders */
+            color: #9ca3af; /* gray-400 */
+        }
+        #contact form input:focus,
+        #contact form textarea:focus {
+            outline: none;
+            border-color: #5eead4;
+            box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.5);
+        }
+         #contact form button { /* Use .cta-button style */
+             /* Inherits from .cta-button */
+             width: auto; /* Allow button to size naturally */
          }
+
 
         /* Responsive adjustments */
         .menu-toggle {
-            display: none; /* Hidden by default */
+            display: none;
             position: fixed;
             top: 1rem;
             right: 1rem;
             z-index: 60;
-            background-color: #374151; /* gray-700 */
+            background-color: #374151;
             color: white;
             padding: 0.5rem;
-            border-radius: 0.375rem; /* rounded-md */
+            border-radius: 0.375rem;
             cursor: pointer;
+            border: none;
         }
 
         @media (max-width: 768px) { /* md breakpoint */
             .sidebar {
-                transform: translateX(-100%); /* Hide sidebar off-screen */
-                z-index: 100; /* Ensure it's on top when open */
+                transform: translateX(-100%);
+                z-index: 100;
                 box-shadow: 5px 0 15px rgba(0,0,0,0.2);
             }
             .sidebar.open {
-                transform: translateX(0); /* Show sidebar */
+                transform: translateX(0);
             }
             .main-content {
-                margin-left: 0; /* Full width */
+                margin-left: 0;
                 width: 100%;
             }
             .menu-toggle {
-                display: block; /* Show hamburger menu */
+                display: block;
             }
             .content-section {
-                 padding: 3rem 1rem; /* Adjust padding */
+                 padding: 4rem 1rem; /* Adjust padding */
             }
-             #home h1 {
-                 font-size: 2.25rem; /* text-4xl */
-             }
-             #home p {
-                 font-size: 1rem; /* text-base */
-             }
-            .content-card h2 {
-                 font-size: 1.875rem; /* text-3xl */
+             #home h1 { font-size: 2.5rem; /* Smaller on mobile */ }
+             #home .subtitle { font-size: 1.25rem; }
+             .section-title { font-size: 1.875rem; /* text-3xl */ }
+
+            /* Stack contact columns on mobile */
+            #contact .contact-columns {
+                flex-direction: column;
             }
+             #contact .contact-left, #contact .contact-right {
+                 width: 100%;
+                 margin-bottom: 2.5rem; /* Add space between stacked columns */
+             }
+             #contact .contact-right { margin-bottom: 0; } /* No bottom margin on last item */
         }
 
     </style>
@@ -221,12 +377,11 @@
 
     <aside class="sidebar" id="sidebar">
         <div>
-            <img src="[https://placehold.co/100x100/4A5568/E2E8F0?text=AP](https://www.google.com/search?q=https://placehold.co/100x100/4A5568/E2E8F0%3Ftext%3DAP)" alt="Aditya Poddar" class="profile-pic">
+            <img src="[https://placehold.co/100x100/4A5568/E2E8F0?text=AP](https://placehold.co/100x100/4A5568/E2E8F0?text=AP)" alt="Aditya Poddar" class="profile-pic">
             <nav id="nav-links">
-                <a href="#home" class="nav-link">Home</a>
+                <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#professional" class="nav-link">Professional</a>
-                <a href="#family" class="nav-link">Family</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
         </div>
@@ -247,64 +402,143 @@
             <div id="tsparticles"></div>
             <div class="hero-content">
                 <h1>Aditya Poddar</h1>
-                <p>Site Reliability Engineer at Google, London. Passionate about building scalable and reliable systems.</p>
+                <p class="subtitle">Site Reliability Engineer</p>
+                <div class="hero-social-links">
+                     <a href="#" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin" class="inline-block w-6 h-6"></i></a>
+                     <a href="#" aria-label="GitHub" title="GitHub"><i data-lucide="github" class="inline-block w-6 h-6"></i></a>
+                     <a href="#" aria-label="Twitter" title="Twitter"><i data-lucide="twitter" class="inline-block w-6 h-6"></i></a>
                 </div>
-        </section>
-
-        <section id="about" class="content-section">
-            <div class="content-card">
-                <h2>About Me</h2>
-                <ul>
-                    <li><strong>Born:</strong> 8th September 1998, Surat</li>
-                    <li><strong>Gotra:</strong> Bansal</li>
-                    <li><strong>Height & Weight:</strong> 5' 7" & 71 kg</li>
-                    <li><strong>Blood Group:</strong> B+</li>
-                    <li><strong>Lifestyle:</strong> Non-consumer, Non-smoker, Vegetarian</li>
-                    <li><strong>Hobbies:</strong> Listening to music, Travelling, Dance, Long walks</li>
-                </ul>
-                <p class="mt-4 text-gray-400 text-center">
-                    A technology enthusiast with a love for exploring new places and enjoying music.
-                </p>
             </div>
         </section>
 
-        <section id="professional" class="content-section">
-            <div class="content-card">
-                <h2>Professional Life</h2>
-                <ul>
-                    <li><strong>Current Role:</strong> Site Reliability Engineer, Google (London, UK)</li>
-                    <li><strong>Experience:</strong> ~3 years in London, ~2 years in Bangalore</li>
-                    <li><strong>Education:</strong> B.E. in Computer Science, PES University, Electronic City</li>
-                    <li><strong>Skills:</strong> [Add key skills here, e.g., Cloud Platforms, Automation, Monitoring, etc.]</li>
-                </ul>
-                 </div>
+        <section id="about" class="content-section">
+            <div class="section-container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-container">
+                    <img src="[https://placehold.co/250x250/667EEA/E2E8F0?text=Your+Image](https://www.google.com/search?q=https://placehold.co/250x250/667EEA/E2E8F0%3Ftext%3DYour%2BImage)" alt="Aditya Poddar" class="about-image">
+                    <div class="about-content">
+                        <h3>Hi, I'm Aditya Poddar</h3>
+                        <p class="role-subtitle">Site Reliability Engineer based in London</p>
+                        <p>
+                            Passionate about building and maintaining scalable, reliable, and efficient systems.
+                            Currently ensuring smooth operations at Google. Educated at PES University with a B.E. in Computer Science.
+                            Outside of tech, I enjoy music, travel, dance, and exploring new horizons.
+                            </p>
+                        <div class="about-details">
+                            <ul>
+                                <li><strong>Name:</strong> Aditya Poddar</li>
+                                <li><strong>Date of Birth:</strong> 8 September 1998</li>
+                                <li><strong>Location:</strong> London, UK</li>
+                                <li><strong>Email:</strong> <a href="#" class="text-teal-300 hover:text-teal-400">[email address removed]</a></li> <li><strong>Phone:</strong> <a href="#" class="text-teal-300 hover:text-teal-400">Your Phone (Optional)</a></li> <li><strong>Hobbies:</strong> Music, Travel, Dance, Long walks</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="cta-button">Download CV</a> </div>
+                </div>
+            </div>
         </section>
 
-        <section id="family" class="content-section">
-             <div class="content-card">
-                <h2>Family Background</h2>
-                <ul>
-                    <li><strong>Father:</strong> Raman Poddar (Heavy earthmover spare parts business)</li>
-                    <li><strong>Mother:</strong> Ruchi Poddar (Fashion Designer)</li>
-                    <li><strong>Family Origin:</strong> Bhiwani, Haryana</li>
-                    <li><strong>Extended Family:</strong> Well-settled uncles and aunts in Surat, Aurangabad, and Amritsar.</li>
-                </ul>
+        <section id="portfolio" class="content-section">
+             <div class="section-container">
+                <h2 class="section-title">Portfolio</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="[https://placehold.co/600x400/374151/9CA3AF?text=Project+1](https://www.google.com/search?q=https://placehold.co/600x400/374151/9CA3AF%3Ftext%3DProject%2B1)" alt="Project 1">
+                        <div class="portfolio-info">
+                            <h4>Project Title 1</h4>
+                            <p>Brief description of the project.</p>
+                            </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="[https://placehold.co/600x400/374151/9CA3AF?text=Project+2](https://www.google.com/search?q=https://placehold.co/600x400/374151/9CA3AF%3Ftext%3DProject%2B2)" alt="Project 2">
+                        <div class="portfolio-info">
+                            <h4>Project Title 2</h4>
+                            <p>Brief description of the project.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="[https://placehold.co/600x400/374151/9CA3AF?text=Project+3](https://www.google.com/search?q=https://placehold.co/600x400/374151/9CA3AF%3Ftext%3DProject%2B3)" alt="Project 3">
+                        <div class="portfolio-info">
+                            <h4>Project Title 3</h4>
+                            <p>Brief description of the project.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="[https://placehold.co/600x400/374151/9CA3AF?text=Project+4](https://www.google.com/search?q=https://placehold.co/600x400/374151/9CA3AF%3Ftext%3DProject%2B4)" alt="Project 4">
+                        <div class="portfolio-info">
+                            <h4>Project Title 4</h4>
+                            <p>Brief description of the project.</p>
+                        </div>
+                    </div>
+                     <div class="portfolio-item">
+                        <img src="[https://placehold.co/600x400/374151/9CA3AF?text=Project+5](https://www.google.com/search?q=https://placehold.co/600x400/374151/9CA3AF%3Ftext%3DProject%2B5)" alt="Project 5">
+                        <div class="portfolio-info">
+                            <h4>Project Title 5</h4>
+                            <p>Brief description of the project.</p>
+                        </div>
+                    </div>
+                     <div class="portfolio-item">
+                        <img src="[https://placehold.co/600x400/374151/9CA3AF?text=Project+6](https://www.google.com/search?q=https://placehold.co/600x400/374151/9CA3AF%3Ftext%3DProject%2B6)" alt="Project 6">
+                        <div class="portfolio-info">
+                            <h4>Project Title 6</h4>
+                            <p>Brief description of the project.</p>
+                        </div>
+                    </div>
+                    </div>
             </div>
         </section>
 
         <section id="contact" class="content-section">
-            <div class="content-card">
-                <h2>Get In Touch</h2>
-                 <p class="text-center text-gray-400 mb-6">Feel free to reach out via LinkedIn or other platforms.</p>
-                <ul>
-                    <li><strong>Current Base:</strong> London, UK</li>
-                    <li><strong>Family Home:</strong> Surat, India</li>
-                    <li><strong>Contact Preference:</strong> Please use social links above or professional channels.</li>
-                     </ul>
-                 <div class="social-links text-center mt-6">
-                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin" class="inline-block w-6 h-6 mx-2 text-gray-400 hover:text-white"></i></a>
-                    <a href="#" aria-label="GitHub" title="GitHub"><i data-lucide="github" class="inline-block w-6 h-6 mx-2 text-gray-400 hover:text-white"></i></a>
-                    <a href="#" aria-label="Twitter" title="Twitter"><i data-lucide="twitter" class="inline-block w-6 h-6 mx-2 text-gray-400 hover:text-white"></i></a>
+            <div class="section-container">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="contact-columns flex flex-col md:flex-row md:space-x-12"> <div class="contact-left w-full md:w-2/5 mb-10 md:mb-0"> <h3 class="text-2xl font-semibold text-white mb-4">Get in Touch</h3>
+                        <p class="text-gray-400 mb-8">
+                            Available for opportunities or a friendly chat. Feel free to reach out!
+                        </p>
+                        <div class="space-y-6"> <div class="contact-item">
+                                <i data-lucide="map-pin"></i>
+                                <div>
+                                    <h4>Location:</h4>
+                                    <p>London, UK</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i data-lucide="mail"></i>
+                                <div>
+                                    <h4>Email:</h4>
+                                    <p><a href="#" class="text-teal-300 hover:text-teal-400">[email address removed]</a></p> </div>
+                            </div>
+                            <div class="contact-item">
+                                <i data-lucide="phone"></i>
+                                <div>
+                                    <h4>Call:</h4>
+                                    <p><a href="#" class="text-teal-300 hover:text-teal-400">Your Phone (Optional)</a></p> </div>
+                            </div>
+                        </div>
+                        <div class="contact-social-links mt-8">
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin" class="inline-block w-6 h-6"></i></a>
+                            <a href="#" aria-label="GitHub" title="GitHub"><i data-lucide="github" class="inline-block w-6 h-6"></i></a>
+                            <a href="#" aria-label="Twitter" title="Twitter"><i data-lucide="twitter" class="inline-block w-6 h-6"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-right w-full md:w-3/5">
+                         <h3 class="text-2xl font-semibold text-white mb-6">Message Me</h3>
+                         <form action="#" method="POST">
+                             <div class="flex flex-col md:flex-row md:space-x-4 mb-4">
+                                 <input type="text" name="name" placeholder="Your Name" required class="w-full md:w-1/2 mb-4 md:mb-0">
+                                 <input type="email" name="email" placeholder="Your Email" required class="w-full md:w-1/2">
+                             </div>
+                             <div class="mb-4">
+                                 <input type="text" name="subject" placeholder="Subject" required>
+                             </div>
+                             <div class="mb-4">
+                                 <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                             </div>
+                             <div>
+                                 <button type="submit" class="cta-button">Send Message</button>
+                             </div>
+                         </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -312,145 +546,48 @@
     </main>
 
     <script>
-        // tsParticles Initialization
+        // tsParticles Initialization (same as before)
         tsParticles.load("tsparticles", {
-            fpsLimit: 60,
-            interactivity: {
-                events: {
-                    onHover: {
-                        enable: true,
-                        mode: "repulse", // Or "grab", "bubble"
-                    },
-                    onClick: {
-                        enable: true,
-                        mode: "push", // Or "remove", "bubble"
-                    },
-                    resize: true,
-                },
-                modes: {
-                    repulse: {
-                        distance: 100, // Increase distance for more noticeable effect
-                        duration: 0.4,
-                    },
-                    push: {
-                        quantity: 4,
-                    },
-                     grab: { // Example grab mode config
-                         distance: 150,
-                         line_linked: {
-                             opacity: 0.5
-                         }
-                     },
-                     bubble: { // Example bubble mode config
-                         distance: 200,
-                         size: 40,
-                         duration: 2,
-                         opacity: 0.8
-                     }
-                },
-            },
-            particles: {
-                color: {
-                    value: "#ffffff", // Particle color
-                },
-                links: {
-                    color: "#ffffff", // Link color
-                    distance: 150,
-                    enable: true,
-                    opacity: 0.2, // Make links less prominent
-                    width: 1,
-                },
-                collisions: {
-                    enable: true,
-                },
-                move: {
-                    direction: "none",
-                    enable: true,
-                    outModes: {
-                        default: "bounce", // Keep particles bouncing within the container
-                    },
-                    random: false,
-                    speed: 1, // Slower speed
-                    straight: false,
-                },
-                number: {
-                    density: {
-                        enable: true,
-                        area: 800, // Adjust density
-                    },
-                    value: 50, // Fewer particles
-                },
-                opacity: {
-                    value: 0.3, // Make particles less prominent
-                },
-                shape: {
-                    type: "circle",
-                },
-                size: {
-                    value: { min: 1, max: 3 }, // Smaller particles
-                },
-            },
-            detectRetina: true,
-             background: { // Ensure particle background matches body
-                 color: '#111827', // Match body background
-             }
+            fpsLimit: 60, interactivity: { events: { onHover: { enable: true, mode: "repulse", }, onClick: { enable: true, mode: "push", }, resize: true, }, modes: { repulse: { distance: 100, duration: 0.4, }, push: { quantity: 4, }, grab: { distance: 150, line_linked: { opacity: 0.5 } }, bubble: { distance: 200, size: 40, duration: 2, opacity: 0.8 } }, }, particles: { color: { value: "#ffffff", }, links: { color: "#ffffff", distance: 150, enable: true, opacity: 0.2, width: 1, }, collisions: { enable: true, }, move: { direction: "none", enable: true, outModes: { default: "bounce", }, random: false, speed: 1, straight: false, }, number: { density: { enable: true, area: 800, }, value: 50, }, opacity: { value: 0.3, }, shape: { type: "circle", }, size: { value: { min: 1, max: 3 }, }, }, detectRetina: true, background: { color: '#111827', }
         });
 
-        // Sidebar Toggle for Mobile
+        // Sidebar Toggle for Mobile (same as before)
         const sidebar = document.getElementById('sidebar');
         const menuToggle = document.getElementById('menu-toggle');
-        const mainContent = document.querySelector('.main-content'); // To potentially overlay
-
         if (menuToggle && sidebar) {
-            menuToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-                // Optional: Add an overlay to the main content when menu is open
-                // You might need an extra div for the overlay
+            menuToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+            document.addEventListener('click', (event) => {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnToggle = menuToggle.contains(event.target);
+                if (!isClickInsideSidebar && !isClickOnToggle && sidebar.classList.contains('open')) {
+                    sidebar.classList.remove('open');
+                }
             });
         }
 
-         // Close sidebar when clicking outside on mobile (optional)
-         document.addEventListener('click', function(event) {
-             const isClickInsideSidebar = sidebar.contains(event.target);
-             const isClickOnToggle = menuToggle.contains(event.target);
-
-             if (!isClickInsideSidebar && !isClickOnToggle && sidebar.classList.contains('open')) {
-                 sidebar.classList.remove('open');
-             }
-         });
-
-        // Active Navigation Link Highlighting on Scroll
+        // Active Navigation Link Highlighting on Scroll (Updated for new sections)
         const sections = document.querySelectorAll('.content-section');
         const navLinks = document.querySelectorAll('.sidebar nav a');
-
         window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
+            let current = 'home'; // Default to home
+             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                // Adjust offset based on your layout needs (e.g., header height)
                 const sectionHeight = section.clientHeight;
-                 // Check if scroll position is within the section bounds (add some buffer)
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                 // Check slightly earlier to highlight sooner when scrolling down
+                if (pageYOffset >= (sectionTop - sectionHeight / 2.5)) {
                     current = section.getAttribute('id');
                 }
             });
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                // Check if the link's href matches the current section ID
                 if (link.getAttribute('href') === `#${current}`) {
                     link.classList.add('active');
                 }
             });
-             // Ensure 'Home' is active when scrolled to the very top
-             if (window.pageYOffset < sections[0].offsetTop) {
-                 navLinks.forEach(link => link.classList.remove('active'));
-                 const homeLink = document.querySelector('.sidebar nav a[href="#home"]');
-                 if(homeLink) homeLink.classList.add('active');
-             }
         });
 
-        // Initialize Lucide Icons
+        // Initialize Lucide Icons (same as before)
         lucide.createIcons();
 
     </script>
